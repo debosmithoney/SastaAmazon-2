@@ -19,9 +19,11 @@ const Nav = () => {
       </Head>
 
       <nav className="flex justify-between text-white h-[4.8rem] items-center gap-2 sticky top-0 z-10 bg-black">
-        <h1 className="text-3xl font-bold m-3 font-serif cursor-pointer">
-          Sasta-Amazon
-        </h1>
+        <Link href="/">
+          <h1 className="text-3xl font-bold m-3 font-serif cursor-pointer">
+            Market-Karo 🤙
+          </h1>
+        </Link>
         <div className="flex gap-7 text-l m-3">
           <Link href="/">
             <a>Home</a>
