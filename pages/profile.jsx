@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useSession, signIn } from "next-auth/react";
 import Nav from "../Components/nav";
 import Footer from "../Components/footer";
-import Image from "next/image";
 
 const Profile = () => {
   const { data, status } = useSession();
@@ -16,8 +15,7 @@ const Profile = () => {
   return (
     <>
       <Nav />
-      <div className=" p-4">
-        <h1 className="text-4xl m-2 font-bold text-[#002B5B]">__Profile__</h1>
+      <div className=" p-4 flex justify-center items-center h-[70vh]">
         <div className="flex justify-start start gap-4 p-12 border-2 bg-slate-200 rounded-xl w-2/4 ">
           <div className="border-4 border-gray-500 rounded-[50%]">
             <img
@@ -32,7 +30,9 @@ const Profile = () => {
               <span className="text-2xl font-bold">{data?.user.name}</span>
             </div>
             <div className="p-2">
-              <span className="text-2xl text-green-900 font-bold">Email : </span>
+              <span className="text-2xl text-green-900 font-bold">
+                Email :{" "}
+              </span>
               <span className="text-2xl font-bold">{data?.user.email}</span>
             </div>
           </div>

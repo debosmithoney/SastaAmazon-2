@@ -7,6 +7,7 @@ import { useSession, signIn, signOut } from "next-auth/react";
 const Nav = () => {
   const [show, setShow] = useState(false);
   const [show2, setShow2] = useState(false);
+  const [count, setCount] = useState(false);
   const { data: session } = useSession();
   return (
     <>
@@ -18,7 +19,9 @@ const Nav = () => {
       </Head>
 
       <nav className="flex justify-between text-white h-[4.8rem] items-center gap-2 sticky top-0 z-10 bg-black">
-        <h1 className="text-3xl font-bold m-3 font-serif">Sasta-Amazon</h1>
+        <h1 className="text-3xl font-bold m-3 font-serif cursor-pointer">
+          Sasta-Amazon
+        </h1>
         <div className="flex gap-7 text-l m-3">
           <Link href="/">
             <a>Home</a>
@@ -45,9 +48,10 @@ const Nav = () => {
                 className="fa-solid fa-user cursor-pointer"
                 onClick={() => {
                   if (session) {
-                    () => {
-                      setCount((e) => !e);
-                    };
+                    setCount(count + 1);
+                    console.log(count);
+                    if (count % 2 != 0) setShow2(true);
+                    else setShow2(false);
                   } else {
                     signIn();
                   }
@@ -58,14 +62,6 @@ const Nav = () => {
               <i
                 className="fa-solid fa-cart-shopping cursor-pointer"
                 onClick={() => {
-                  // if (session) {
-                  //   setCount(count + 1);
-                  //   console.log(count);
-                  //   if (count % 2 != 0) setShow2(true);
-                  //   else setShow2(false);
-                  // } else {
-                  //   signIn();
-                  // }
                   alert("Feature coming soon...");
                 }}
               ></i>
@@ -74,7 +70,6 @@ const Nav = () => {
         </div>
       </nav>
 
-      {/*profile and logout*/}
       <div
         className={
           show2

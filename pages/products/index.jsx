@@ -37,20 +37,20 @@ const Product = () => {
       {categories?.map((category) => (
         <React.Fragment key={category}>
           <h1 className=" text-center mx-12 font-extrabold text-4xl m-2 mt-8">
-            __ {category} __
+            {category}
           </h1>
 
-          <div className="grid grid-cols-4 justify-items-center my-4">
+          <div className="grid grid-cols-3 justify-items-center my-4">
             {products
               .filter((e) => e.category === category)
               .map((product) => (
                 <div
                   key={product._id}
-                  className="w-[22rem] flex flex-col items-center gap-2  bg-white p-3 rounded-xl shadow-2xl m-2 "
+                  className="w-[22rem] flex flex-col items-center gap-8  bg-white p-3 rounded-xl shadow-2xl m-2 "
                 >
                   <Link href={`/products/${product._id}`}>
                     <img
-                      className="w-[20rem] cursor-pointer "
+                      className=" cursor-pointer h-[12rem] "
                       src={JSON.parse(product.image)[0]}
                     />
                   </Link>
@@ -59,7 +59,7 @@ const Product = () => {
                     &#8377;{product.price}
                   </p>
                   <button
-                    className="bg-amber-500 text-white p-2 px-3 hover:scale-[1.1] font-semibold rounded-3xl"
+                    className="bg-blue-500 hover:bg-blue-600 active:bg-blue-400 text-white p-2 px-3 hover:scale-105 transition-all font-semibold rounded-3xl"
                     onClick={() => {
                       if (session) {
                         router.push(

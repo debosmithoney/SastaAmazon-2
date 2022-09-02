@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import Nav from "../Components/nav";
 import Image from "next/image";
-import landingimg from "../Assets/landingpost.jpg";
-import Head from "next/head";
+import landingimg from "../Assets/pexels-pixabay-257923.jpeg";
 import Link from "next/link";
 import Footer from "../Components/footer";
 import { useSession } from "next-auth/react";
@@ -15,25 +14,26 @@ export default function Home() {
       <Nav />
       <div>
         <Image src={landingimg} alt="" />
-        <div className="flex flex-col gap-4 justify-center items-center absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 ">
-          <h1 className="bg-white/50 text-black text-3xl w-[16rem] p-6 text-center font-extrabold rounded-xl">
-            __Categories__
+        <div className="flex flex-col gap-4 justify-center items-center absolute top-[50%] right-[10%] -translate-x-1/2 -translate-y-1/2 ">
+          <h1 className="bg-black text-white text-3xl w-[16rem] p-6 text-center font-extrabold rounded-xl">
+            Categories
           </h1>
-          <Link href={"/products?category=Tshirts"}>
-            <a className="bg-black/60 hover:scale-[1.1] text-white text-3xl w-[12rem] p-4 py-6 text-center font-bold rounded-xl">
-              Tees
+          <Link href={"/products?category=Camera"}>
+            <a className="bg-black/60 hover:scale-105 transition-all hover:bg-black/70 text-white text-3xl w-[12rem] p-3 py-6 text-center font-bold rounded-xl">
+              Camera
             </a>
           </Link>
 
-          <Link href={"/products?category=Lamps"}>
-          <a className="bg-black/60 hover:scale-[1.1] text-white text-3xl w-[12rem] p-4 py-6 text-center font-bold rounded-xl">
-            Lamps
-          </a></Link>
+          <Link href={"/products?category=Laptop"}>
+            <a className="bg-black/60 hover:scale-105 transition-all hover:bg-black/70 text-white text-3xl w-[12rem] p-3 py-6 text-center font-bold rounded-xl">
+              Laptop
+            </a>
+          </Link>
 
-          <Link href={"/products?category=Figurines"}>
-          <a className="bg-black/60 hover:scale-[1.1] text-white text-3xl w-[12rem] p-4 py-6 text-center font-bold rounded-xl">
-            Figurines
-          </a>
+          <Link href={"/products?category=Mobile"}>
+            <a className="bg-black/60 hover:scale-105 transition-all hover:bg-black/70 text-white text-3xl w-[12rem] p-3 py-6 text-center font-bold rounded-xl">
+              Mobile
+            </a>
           </Link>
         </div>
       </div>
